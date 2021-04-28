@@ -30,6 +30,11 @@ Once started, the container app sets up a property on the Window, in which we se
 ## Environment setup
 The project is mainly handled by Rush. Use the following Rush commands to set up the app dependencies
 ```shell
+# Install Rush
+$ npm install -g @microsoft/rush
+```
+```shell
+# Fetch project dependencies
 $ rush install
 ```
 Create the `.env` under the container app
