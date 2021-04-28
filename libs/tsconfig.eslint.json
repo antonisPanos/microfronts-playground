@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig",
+  "include": [".eslintrc.js", "babel.config.js", "models", "services", "jest.config.js"],
+  "exclude": []
+}
