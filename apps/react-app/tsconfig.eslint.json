@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig",
+  "include": ["configs", ".eslintrc.js", "enzyme.config.js", "babel.config.js", "src"],
+  "exclude": []
+}

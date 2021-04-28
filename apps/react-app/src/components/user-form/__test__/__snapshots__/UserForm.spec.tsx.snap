@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RouteInfo should render correctly 1`] = `
+"<Fragment>
+  <h3>
+    User
+  </h3>
+  <input type=\\"text\\" value=\\"\\" onChange={[Function: onChange]} />
+</Fragment>"
+`;

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["es2018", "dom"],
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES6"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

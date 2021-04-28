@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should render correctly 1`] = `
+"<StrictMode>
+  <div style={{...}}>
+    <h1>
+      ReactApp
+    </h1>
+    <section>
+      <h2>
+        Router outlet
+      </h2>
+      <div style={{...}}>
+        <Router location={{...}}>
+          <RouteInfo location={{...}} path=\\"/home\\" />
+          <UserForm location={{...}} path=\\"/user-form\\" />
+        </Router>
+      </div>
+    </section>
+  </div>
+</StrictMode>"
+`;
