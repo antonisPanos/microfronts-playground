@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should render correctly 1`] = `
+"<StrictMode>
+  <div style={{...}}>
+    <section>
+      <h2>
+        Maestro
+      </h2>
+      <UserDetails />
+      <hr />
+      <h2>
+        Navigate
+      </h2>
+      <ul>
+        <li>
+          <a href=\\"#/home\\">
+            <strong>
+              /home
+            </strong>
+             - (ReactApp)
+          </a>
+        </li>
+        <li>
+          <a href=\\"#/user-form\\">
+            <strong>
+              /user-form
+            </strong>
+             - (ReactApp)
+          </a>
+        </li>
+        <li>
+          <a href=\\"#/ng\\">
+            <strong>
+              /ng
+            </strong>
+             - (NgApp - Home)
+          </a>
+        </li>
+        <li>
+          <a href=\\"#/ng-route-info\\">
+            <strong>
+              /ng-route-info
+            </strong>
+             - (NG App)
+          </a>
+        </li>
+        <li>
+          <a href=\\"#/ng-user-form\\">
+            <strong>
+              /ng-user-form
+            </strong>
+             - (NG App)
+          </a>
+        </li>
+        <li>
+          <a href=\\"#/ng-subdomain/ng-route-info\\">
+            <strong>
+              /ng-subdomain/ng-route-info
+            </strong>
+             - (NG App)
+          </a>
+        </li>
+      </ul>
+    </section>
+    <hr />
+    <section>
+      <h2>
+        Router outlet
+      </h2>
+      <div style={{...}}>
+        <LocationProvider history={{...}}>
+          [function]
+        </LocationProvider>
+      </div>
+    </section>
+  </div>
+</StrictMode>"
+`;
