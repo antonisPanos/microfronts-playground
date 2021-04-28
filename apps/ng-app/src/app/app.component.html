@@ -1,0 +1,38 @@
+<div style="padding: 10px">
+  <h1>NgApp</h1>
+  <hr />
+  <h2>Navigate</h2>
+  <nav>
+    <ul>
+      <li>
+        <a href="#/home"><strong>/</strong> - (ReactApp, external routing)</a>
+      </li>
+      <li>
+        <a href="#/user-form"
+          ><strong>/user-form</strong> - (ReactApp - Secondary view, external routing)</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ng-route-info" routerLinkActive="active"
+          ><strong>/ng-route-info</strong> - (NgApp - internal routing)</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ng-user-form" routerLinkActive="active"
+          ><strong>/ng-user-form</strong> - (NgApp - internal routing)</a
+        >
+      </li>
+      <li>
+        <a routerLink="/ng-subdomain/ng-route-info" routerLinkActive="active"
+          ><strong>/ng-subdomain/ng-route-info</strong> - (NgApp - internal routing)</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <hr />
+
+  <h2>Router outlet</h2>
+  <div style="border: 1px dashed black; border-radius: 10px; padding: 10px">
+    <router-outlet></router-outlet>
+  </div>
+</div>
