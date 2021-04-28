@@ -21,7 +21,7 @@
     //    * The set of projects can be restricted e.g. using the "--to" or "--from" parameters.
     //    */
     //   "commandKind": "bulk",
-    // 
+    //
     //   /**
     //    * (Required) The name that will be typed as part of the command line.  This is also the name
     //    * of the "scripts" hook in the project's package.json file.
@@ -33,13 +33,13 @@
     //    * and will call the "rebuild" script instead of the "build" script.
     //    */
     //   "name": "my-bulk-command",
-    // 
+    //
     //   /**
     //    * (Required) A short summary of the custom command to be shown when printing command line
     //    * help, e.g. "rush --help".
     //    */
     //   "summary": "Example bulk custom command",
-    // 
+    //
     //   /**
     //    * A detailed description of the command to be shown when printing command line
     //    * help (e.g. "rush --help my-command").
@@ -49,7 +49,7 @@
     //    * documentation can make a big difference for the developer experience in your repo.
     //    */
     //   "description": "This is an example custom command that runs separately for each project",
-    // 
+    //
     //   /**
     //    * By default, Rush operations acquire a lock file which prevents multiple commands from executing simultaneously
     //    * in the same repo folder.  (For example, it would be a mistake to run "rush install" and "rush build" at the
@@ -59,14 +59,14 @@
     //    * In particular, this is needed for custom scripts that invoke other Rush commands.
     //    */
     //   "safeForSimultaneousRushProcesses": false,
-    // 
+    //
     //   /**
     //    * (Required) If true, then this command is safe to be run in parallel, i.e. executed
     //    * simultaneously for multiple projects.  Similar to "rush build", regardless of parallelism
     //    * projects will not start processing until their dependencies have completed processing.
     //    */
     //   "enableParallelism": false,
-    // 
+    //
     //   /**
     //    * Normally projects will be processed according to their dependency order: a given project will not start
     //    * processing the command until all of its dependencies have completed.  This restriction doesn't apply for
@@ -74,14 +74,14 @@
     //    * you can set "ignoreDependencyOrder" to true to increase parallelism.
     //    */
     //   "ignoreDependencyOrder": false,
-    // 
+    //
     //   /**
     //    * Normally Rush requires that each project's package.json has a "scripts" entry matching
     //    * the custom command name.  To disable this check, set "ignoreMissingScript" to true;
     //    * projects with a missing definition will be skipped.
     //    */
     //   "ignoreMissingScript": false,
-    // 
+    //
     //   /**
     //    * When invoking shell scripts, Rush uses a heuristic to distinguish errors from warnings:
     //    * - If the shell script returns a nonzero process exit code, Rush interprets this as "one or more errors".
@@ -103,12 +103,12 @@
     //    * Note: The default value is false. In Rush 5.7.x and earlier, the default value was true.
     //    */
     //   "allowWarningsInSuccessfulBuild": false,
-    // 
+    //
     //   /**
     //    * If true then this command will be incremental like the built-in "build" command
     //    */
     //   "incremental": false,
-    // 
+    //
     //   /**
     //    * (EXPERIMENTAL) Normally Rush terminates after the command finishes. If this option is set to "true" Rush
     //    * will instead enter a loop where it watches the file system for changes to the selected projects. Whenever a
@@ -118,7 +118,7 @@
     //    * For details, refer to the website article "Using watch mode".
     //    */
     //   "watchForChanges": false,
-    // 
+    //
     //   /**
     //    * (EXPERIMENTAL) Disable cache for this action. This may be useful if this command affects state outside of
     //    * projects' own folders.
@@ -166,6 +166,48 @@
     //    */
     //   // "autoinstallerName": "my-task"
     // }
+    {
+      "name": "prettier",
+      "commandKind": "global",
+      "summary": "Used by the pre-commit Git hook. This command invokes Prettier to reformat staged changes.",
+      "autoinstallerName": "rush-prettier",
+      "shellCommand": "pretty-quick --staged"
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Used by the pre-commit Git hook. Invokes ESLint to highlight code quality errors.",
+      "enableParallelism": true,
+      "ignoreMissingScript": false
+    },
+    {
+      "name": "lint:staged",
+      "commandKind": "bulk",
+      "summary": "Used by the pre-commit Git hook.Invokes ESLint to highlight code quality errors on staged files.",
+      "enableParallelism": false,
+      "ignoreMissingScript": false
+    },
+    {
+      "name": "start",
+      "commandKind": "bulk",
+      "summary": "Run all app dev servers",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    },
+    {
+      "name": "build",
+      "commandKind": "bulk",
+      "summary": "Build all apps",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    },
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "Test all apps",
+      "enableParallelism": true,
+      "ignoreMissingScript": true
+    }
   ],
 
   /**
