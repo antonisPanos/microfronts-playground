@@ -8,6 +8,7 @@ export const APPS_MANIFEST: Record<AppsEnum, AppConfig> = {
   [AppsEnum.REACT_APP]: {
     name: 'reactApp',
     scripts: ['main.js'],
+    styles: [],
     host: REACT_APP_HOST,
     type: AppTypeEnum.REACT,
     mountMethodName: AppRenderMethodsEnum.REACT_APP_MOUNT_METHOD,
@@ -16,6 +17,7 @@ export const APPS_MANIFEST: Record<AppsEnum, AppConfig> = {
   [AppsEnum.NG_APP]: {
     name: 'ngApp',
     scripts: ['runtime.js', 'polyfills.js', 'vendor.js', 'main.js'],
+    styles: [],
     host: NG_APP_HOST,
     type: AppTypeEnum.ANGULAR,
     mountMethodName: AppRenderMethodsEnum.NG_APP_MOUNT_METHOD,

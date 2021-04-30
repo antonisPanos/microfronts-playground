@@ -26,7 +26,7 @@ class MicroFront extends React.Component<{
   };
 
   componentDidMount(): void {
-    const {name, scripts, host} = APPS_MANIFEST[this.props.app];
+    const {name, scripts, host, styles} = APPS_MANIFEST[this.props.app];
 
     if (!(name || scripts || host)) throw new Error('Missing micro-front script details');
 
@@ -36,10 +36,15 @@ class MicroFront extends React.Component<{
 
     if (
       !scripts.some(scriptFileName => {
-        const scriptId = MicroFrontUtils.createScriptTagId(name, scriptFileName);
+        const scriptId = MicroFrontUtils.createTagId(
+          name,
+          scriptFileName,
+          MicroFrontUtils.SCRIPT_PREFIX
+        );
         return !!document.getElementById(scriptId);
       })
     ) {
+      MicroFrontUtils.appendStyleTags(host!, name, styles);
       MicroFrontUtils.appendScriptTags(host!, name, scripts, this.renderMicroFrontend);
       return;
     }
