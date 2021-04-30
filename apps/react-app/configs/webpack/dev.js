@@ -5,13 +5,13 @@ const commonConfig = require('./common');
 module.exports = merge(commonConfig, {
   mode: 'development',
   entry: [
-    'react-hot-loader/patch', // activate HMR for React
-    'webpack-dev-server/client?http://localhost:3001', // bundle the client for webpack-dev-server and connect to the provided endpoint
-    'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
-    './App.tsx' // the entry point of our app
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3001',
+    'webpack/hot/only-dev-server',
+    './App.tsx'
   ],
   devServer: {
-    hot: true, // enable HMR on the server
+    hot: true,
     port: 3001,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -20,7 +20,5 @@ module.exports = merge(commonConfig, {
     }
   },
   devtool: 'cheap-module-source-map',
-  plugins: [
-    new webpack.HotModuleReplacementPlugin() // enable HMR globally
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 });

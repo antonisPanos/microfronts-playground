@@ -11,13 +11,8 @@ import {v4 as uuidv4} from 'uuid';
  * Angular require custom elements to bootstrap.
  * Note that custom elements must be defined in the
  * CustomElementRegistry but cannot be removed afterwards.
- * This means that we cannot create multiple custom elements
- * of the same name, in case we got multiple NG apps,
  * neither we can destroy and re-use due to the API restrictions.
  * https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
- * We generate the app ID as a suffix to the element's name
- * and pass it into Angular's bootstrap method so we can mount
- * on unique custom elements each time
  */
 const NgCustomElement = ({appId}: {appId: string}): DOMElement<any, any> =>
   React.createElement(`${MicroFrontUtils.NG_CUSTOM_ELEMENT_PREFIX}${appId}`, null, null);
@@ -39,8 +34,6 @@ class MicroFront extends React.Component<{
 
     this.setState({appId: customElementId});
 
-    // If some of the apps scripts can't be found, we append them,
-    // otherwise we skip and move on to render the app.
     if (
       !scripts.some(scriptFileName => {
         const scriptId = MicroFrontUtils.createScriptTagId(name, scriptFileName);
