@@ -181,10 +181,18 @@
       "ignoreMissingScript": false
     },
     {
+      "name": "lint-staged-hook",
+      "commandKind": "global",
+      "summary": "Rush pre-commit hook auto-installer. Invokes lint:staged which will run for all projects",
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "rush-lint-staged",
+      "shellCommand": "rush lint:staged"
+    },
+    {
       "name": "lint:staged",
       "commandKind": "bulk",
       "summary": "Used by the pre-commit Git hook.Invokes ESLint to highlight code quality errors on staged files.",
-      "enableParallelism": false,
+      "enableParallelism": true,
       "ignoreMissingScript": false
     },
     {

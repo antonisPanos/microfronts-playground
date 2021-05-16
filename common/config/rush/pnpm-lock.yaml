@@ -18,7 +18,7 @@ dependencies:
   '@babel/preset-react': 7.12.13_@babel+core@7.13.10
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.10
   '@reach/router': 1.3.4_react-dom@17.0.1+react@17.0.1
-  '@rush-temp/libs': file:projects/libs.tgz
+  '@rush-temp/libs': file:projects/libs.tgz_4be75fd0a5d4de56a3ed1c3460e15a62
   '@rush-temp/maestro': file:projects/maestro.tgz_ts-node@8.3.0
   '@rush-temp/ng-app': file:projects/ng-app.tgz_cf00210c5b82bbd87f011ce08ca28e7d
   '@rush-temp/react-app': file:projects/react-app.tgz_ts-node@8.3.0
@@ -16761,13 +16761,25 @@ packages:
     dev: false
     resolution:
       integrity: sha512-DDh2Ab+A/B+9mJyajPjHFPWfYU1H+pdun4wnnk0OcQTNjem1XQSZ2CDW+rfZEUDjv5M19SBqAkjZi0x5wuB5Qw==
-  file:projects/libs.tgz:
+  file:projects/libs.tgz_4be75fd0a5d4de56a3ed1c3460e15a62:
     dependencies:
+      '@types/jest': 26.0.21
+      '@typescript-eslint/eslint-plugin': 4.18.0_c0ca8a71ef671e1a0b63728c2ed7aca5
+      '@typescript-eslint/parser': 4.14.1_eslint@7.22.0
+      babel-jest: 26.6.3_@babel+core@7.13.10
+      jest: 26.6.3_ts-node@8.3.0
+      lint-staged: 10.5.4
       rxjs: 6.6.7
+      ts-jest: 26.5.5_jest@26.6.3
     dev: false
+    id: file:projects/libs.tgz
     name: '@rush-temp/libs'
+    peerDependencies:
+      '@babel/core': '*'
+      eslint: '*'
+      ts-node: '*'
     resolution:
-      integrity: sha512-MJD76mMb4kCa/+N33agiKOBnq+8I2rwG4Jd/IJxowenylGhc3lz2qEgLgrliHqgGXVk3NOvHFB4oHsbGvcWsww==
+      integrity: sha512-NnoOFDiDuisTzF/kOMIeQ3zLhbjUUdfqK3rZOVjgbz+1uliOexB8AmRy6mCbJPtQkg0Kji///rhhiuH8/N7c8w==
       tarball: file:projects/libs.tgz
     version: 0.0.0
   file:projects/maestro.tgz_ts-node@8.3.0:
@@ -16861,6 +16873,7 @@ packages:
       karma-coverage: 2.0.3
       karma-jasmine: 4.0.1_karma@6.1.2
       karma-jasmine-html-reporter: 1.5.4_4254be338648096d1b35cd68ce3001cc
+      lint-staged: 10.5.4
       ngx-build-plus: 11.0.0_bf813fc464f36c3995cb02a83691cae9
       protractor: 7.0.0
       rxjs: 6.6.7
@@ -16878,7 +16891,7 @@ packages:
       webpack: '*'
       webpack-cli: '*'
     resolution:
-      integrity: sha512-I55rNzR6ff9TtWLnqxZdiFtcza2VPMXZruRdRHDwf4MSrn8c1PlYTwM4DhHthi7QB/hChz9PyPnmPoiOctrBtw==
+      integrity: sha512-tpcvPDhGn+IjHextWd/5R6W7LlT0jutUx/CIIIcdF47PCCDODY8tUcrq7VcUkAgU8zYQivGDWgOXEJLiupcleQ==
       tarball: file:projects/ng-app.tgz
     version: 0.0.0
   file:projects/react-app.tgz_ts-node@8.3.0:
@@ -16916,6 +16929,7 @@ packages:
       image-webpack-loader: 7.0.1
       jest: 26.6.3_ts-node@8.3.0
       jest-transform-stub: 2.0.0
+      lint-staged: 10.5.4
       node-sass: 5.0.0
       reach-router-hash-history: 0.0.3
       react: 17.0.1
@@ -16937,7 +16951,7 @@ packages:
     peerDependencies:
       ts-node: '*'
     resolution:
-      integrity: sha512-DIb9yDtaLC3WFG66xLSHYVH02DT0/a8iMUuN4LBR12ZBBNBqmxMlzmKrNxDDL6W3eCxenpc1TWLfcIahJRdYvQ==
+      integrity: sha512-yd9eBza5zE8a3B9oRccDno4lXGysMEkiH0vDIZtEpv61+rLLzlQ1vM+zzSuEj//HYbStgPh4mI4rF5sO5hX2QA==
       tarball: file:projects/react-app.tgz
     version: 0.0.0
 registry: ''
