@@ -25,14 +25,16 @@ class MicroFront extends React.Component<{
     appId: ''
   };
 
+  constructor(props: {app: AppsEnum; location: WindowLocation}) {
+    super(props);
+    const customElementId = uuidv4().replace(/-/g, '');
+    this.state = {appId: customElementId};
+  }
+
   componentDidMount(): void {
     const {name, scripts, host, styles} = APPS_MANIFEST[this.props.app];
 
     if (!(name || scripts || host)) throw new Error('Missing micro-front script details');
-
-    const customElementId = uuidv4().replace(/-/g, '');
-
-    this.setState({appId: customElementId});
 
     if (
       !scripts.some(scriptFileName => {
@@ -46,12 +48,13 @@ class MicroFront extends React.Component<{
     ) {
       MicroFrontUtils.appendStyleTags(host!, name, styles);
       MicroFrontUtils.appendScriptTags(host!, name, scripts, this.renderMicroFrontend);
-      return;
+    } else {
+      this.renderMicroFrontend();
     }
   }
 
-  componentDidUpdate(): void {
-    this.renderMicroFrontend();
+  shouldComponentUpdate(): boolean {
+    return false;
   }
 
   componentWillUnmount(): void {
